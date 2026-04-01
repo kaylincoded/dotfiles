@@ -64,8 +64,8 @@
   "clock": {
 //    "format": "{:L%A %H:%M}",
     "format": " {:%a %d %b  %I:%M %p}",	//12 hour format
-    "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/toggle-calcure.sh",
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
