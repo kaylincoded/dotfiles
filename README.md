@@ -15,6 +15,10 @@
   <img src="https://img.shields.io/badge/Terminal-Ghostty-89dceb?style=flat-square" />
 </p>
 
+<p align="center">
+  <img src="desktop-screenshot.png" alt="desktop screenshot" width="800" />
+</p>
+
 ---
 
 ## What's Inside
