@@ -1,0 +1,238 @@
+/*
+  Styling adapted from github.com/MrE8065/MyDotfiles
+  Uses omarchy theme colors instead of pywal
+*/
+
+@import "../omarchy/current/theme/waybar.css";
+
+/* ===== GLOBAL CONFIG ===== */
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
+}
+
+window#waybar {
+  all: unset;
+  min-height: 0;
+}
+
+/* ===== MODULE CONTAINERS ===== */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 6px;
+  padding-top: 4px;
+  background: alpha(@background, 0.8);
+}
+
+.modules-left {
+  border-radius: 0 0 16px 0;
+}
+
+.modules-center {
+  border-radius: 0 0 16px 16px;
+}
+
+.modules-right {
+  border-radius: 0 0 0 16px;
+}
+
+/* ===== GLOBAL TOOLTIP ===== */
+tooltip {
+  font-weight: bold;
+  background: @background;
+  color: @foreground;
+  border-radius: 8px;
+  border: 1px solid alpha(@foreground, 0.3);
+  font-size: 14px;
+}
+
+/* ===== SHARED BASE STYLES ===== */
+#taskbar button,
+#clock,
+#bluetooth,
+#battery,
+#tray,
+#mpris,
+#pulseaudio,
+#custom-notification,
+#custom-pacman,
+#custom-expand,
+#custom-expand-icon,
+#custom-brightness,
+#custom-omarchy,
+#custom-update,
+#custom-music,
+#custom-voxtype,
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#network,
+#cpu,
+#power-profiles-daemon,
+#custom-power,
+#custom-colorpicker,
+#backlight {
+  padding: 0px 10px;
+  margin: 0px 3px;
+  border-radius: 8px;
+  background: alpha(@background, 0.3);
+  border: 1px solid alpha(@foreground, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: @foreground;
+}
+
+#taskbar button:hover,
+#clock:hover,
+#bluetooth:hover,
+#battery:hover,
+#tray:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#custom-notification:hover,
+#custom-pacman:hover,
+#custom-expand:hover,
+#custom-expand-icon:hover,
+#custom-brightness:hover,
+#custom-omarchy:hover,
+#custom-update:hover,
+#custom-music:hover,
+#custom-voxtype:hover,
+#custom-screenrecording-indicator:hover,
+#custom-idle-indicator:hover,
+#custom-notification-silencing-indicator:hover,
+#network:hover,
+#cpu:hover,
+#power-profiles-daemon:hover,
+#custom-colorpicker:hover,
+#backlight:hover {
+  color: @foreground;
+  background: alpha(@foreground, 0.1);
+  border-color: alpha(@foreground, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== BUILT-IN MODULES ===== */
+/* Battery */
+#battery.charging {
+  color: #26a65b;
+  border-color: alpha(#26a65b, 0.3);
+}
+
+#battery.warning:not(.charging) {
+  color: #ffbe61;
+  border-color: alpha(#ffbe61, 0.3);
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  border-color: alpha(#f53c3c, 0.3);
+  animation: blink 0.5s steps(90) infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* MPRIS / Music */
+#mpris,
+#custom-music {
+  min-width: 200px;
+}
+
+#custom-music.paused {
+  opacity: 0.5;
+}
+
+#custom-music.stopped {
+  opacity: 0;
+}
+
+/* Album art popup */
+#image-albumart {
+  border-radius: 12px;
+  margin-top: 4px;
+  border: 2px solid alpha(@foreground, 0.3);
+}
+
+/* Taskbar active button */
+#taskbar button.active {
+  background: alpha(@foreground, 0.2);
+  border-color: alpha(@foreground, 0.4);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Workspaces */
+#workspaces {
+  padding: 0px 5px;
+}
+
+#workspaces button {
+  all: unset;
+  background: alpha(@foreground, 0.6);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0px 8px;
+  margin: 0px 5px;
+}
+
+#workspaces button:hover {
+  background: alpha(@foreground, 0.6);
+}
+
+#workspaces button.active {
+  background: @foreground;
+}
+
+#workspaces button.empty {
+  background: alpha(@foreground, 0.4);
+  margin-bottom: 18px;
+}
+
+#workspaces button.empty:hover {
+  background: alpha(@foreground, 0.6);
+}
+
+#workspaces button.empty.active {
+  background: @foreground;
+  margin-bottom: 10px;
+}
+
+/* Clock */
+#clock {
+  padding-right: 10px;
+}
+
+/* ===== INDICATORS ===== */
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+/* ===== CUSTOM MODULES ===== */
+/* Custom power */
+#custom-power {
+  border: 1px solid alpha(#f53c3c, 0.3);
+}
+
+#custom-power:hover {
+  color: #f53c3c;
+  background: alpha(#f53c3c, 0.1);
+  border-color: alpha(#f53c3c, 0.5);
+  box-shadow: 0 4px 8px rgba(245, 60, 60, 0.2);
+}
+
+/* Separator */
+#custom-separator {
+  color: @foreground;
+  font-weight: bold;
+}
