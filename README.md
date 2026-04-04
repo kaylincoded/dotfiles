@@ -50,7 +50,11 @@
 - **Rounded everything** — 18px corners on windows, bar modules, and launcher
 - **Gradient borders** — ice blue `#89dceb` → lavender `#b4befe` → mauve `#cba6f7` at 45°
 - **Waybar styling** — semi-transparent pill modules with subtle borders and smooth hover transitions
-- **Album art popup** — right-click the now-playing module to toggle a pinned album art window that updates live on track change
+- **Album art popup** — right-click the now-playing module to toggle a pinned album art window with playback controls on hover, high-res art from MusicBrainz, and live track updates. Resizable and tileable for mini-player use.
+
+<p align="center">
+  <img src="assets/album-art-popup.png" alt="album art popup with playback controls" width="500" />
+</p>
 - **Video wallpapers** — via mpvpaper, persisted across reboots with waypaper
 
 ## Setup
