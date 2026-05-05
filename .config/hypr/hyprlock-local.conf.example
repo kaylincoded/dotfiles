@@ -1,0 +1,8 @@
+# Per-machine hyprlock overrides.
+# Copy to hyprlock-local.conf and edit. The real file is gitignored.
+#
+# Defines vars used by hyprlock-hyde.conf that vary per machine.
+
+# Avatar shown in center of lock screen (used as $MPRIS_IMAGE in HyDE layout).
+# Defaults to current desktop background if this file is absent.
+$MPRIS_IMAGE = ~/Pictures/your-avatar.png

@@ -1,0 +1,2 @@
+# Per-machine hyprlock overrides (avatar path, etc)
+.config/hypr/hyprlock-local.conf
