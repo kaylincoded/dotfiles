@@ -33,7 +33,10 @@
 │   ├── input.conf           keyboard & touchpad
 │   ├── autostart.conf       startup apps
 │   ├── hypridle.conf        idle/lock timeouts
-│   ├── hyprlock.conf        lock screen
+│   ├── hyprlock.conf        lock screen entry point (sources hyprlock-hyde.conf)
+│   ├── hyprlock-hyde.conf   HyDE layout wrapper — vars + theme colors
+│   ├── hyprlock-local.conf  per-machine overrides (gitignored; see .example)
+│   ├── hyprlock/HyDE.conf   HyDE lock screen layout (vendored)
 │   └── ...
 ├── waybar/            # status bar — custom styling + album art popup
 │   ├── config.jsonc         modules & layout
@@ -73,6 +76,9 @@ Copy what you need into `~/.config/`. These configs assume:
 - [playerctl](https://github.com/altdesktop/playerctl) for the album art scripts
 - [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)
 - An [omarchy](https://omarchy.com) base install (theme colors, menu scripts)
+- [HyDE](https://github.com/HyDE-Project/HyDE) installed for the lock screen layout fragment, `hyde-shell` volume control, and related scripts under `~/.local/lib/hyde/`
+
+For the lock screen avatar, copy `.config/hypr/hyprlock-local.conf.example` to `hyprlock-local.conf` and point `$MPRIS_IMAGE` at your image. If absent, the lock screen falls back to the current desktop background.
 
 ## License
 
