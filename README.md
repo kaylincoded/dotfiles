@@ -37,6 +37,7 @@
 │   ├── hyprlock-hyde.conf   HyDE layout wrapper — vars + theme colors
 │   ├── hyprlock-local.conf  per-machine overrides (gitignored; see .example)
 │   ├── hyprlock/HyDE.conf   HyDE lock screen layout (vendored)
+│   ├── userprefs.conf       personal tweaks — touchpad, hyprtasking, windowrules
 │   └── ...
 ├── waybar/            # status bar — custom styling + album art popup
 │   ├── config.jsonc         modules & layout
@@ -55,6 +56,7 @@
 - **Waybar styling** — semi-transparent pill modules with subtle borders and smooth hover transitions
 - **Video wallpapers** — via mpvpaper, persisted across reboots with waypaper
 - **Album art popup** — right-click the now-playing module to toggle a pinned album art window with playback controls on hover, high-res art from MusicBrainz, and live track updates. Resizable and tileable for mini-player use.
+- **Workspace overview** — `SUPER+TAB` triggers [hyprtasking](https://github.com/raybbian/hyprtasking) for an exposé-style linear overview, click-to-switch, with mauve borders matching the rest of the palette.
 
 <p align="center">
   <img src="assets/album-art-popup.png" alt="album art popup with playback controls" width="500" />
@@ -76,7 +78,9 @@ Copy what you need into `~/.config/`. These configs assume:
 - [playerctl](https://github.com/altdesktop/playerctl) for the album art scripts
 - [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)
 - An [omarchy](https://omarchy.com) base install (theme colors, menu scripts)
-- [HyDE](https://github.com/HyDE-Project/HyDE) installed for the lock screen layout fragment, `hyde-shell` volume control, and related scripts under `~/.local/lib/hyde/`
+- [HyDE](https://github.com/HyDE-Project/HyDE) installed for the lock screen layout fragment, `hyde-shell` volume control, the screenshot pipeline (`hyde-shell screenshot` → grimblast → satty), and related scripts under `~/.local/lib/hyde/`
+- [satty](https://github.com/gabm/satty) for screenshot annotation (HyDE picks it up automatically if installed)
+- [hyprtasking](https://github.com/raybbian/hyprtasking) Hyprland plugin for the workspace overview (`hyprpm add https://github.com/raybbian/hyprtasking`)
 
 For the lock screen avatar, copy `.config/hypr/hyprlock-local.conf.example` to `hyprlock-local.conf` and point `$MPRIS_IMAGE` at your image. If absent, the lock screen falls back to the current desktop background.
 
